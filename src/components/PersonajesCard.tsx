@@ -1,8 +1,7 @@
+import { Character } from "@/interface";
 import Image from "next/image";
 import React from "react";
-import { Character } from "@/pages/ui/harrypotter";
 
-// Función para obtener las clases de gradiente basadas en la casa
 const getGradientClasses = (house: string) => {
   switch (house) {
     case "Gryffindor":
@@ -46,6 +45,7 @@ export const PersonajesCard: React.FC<Character> = ({
           width={200}
           height={200}
           className="w-24 h-24 md:w-48 md:h-48 rounded-full mx-auto"
+          priority={false}
         />
       </div>
       <div className="p-4 md:flex-grow">
