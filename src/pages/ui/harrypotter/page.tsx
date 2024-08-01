@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Style from "./home.module.css";
 import { HarryResponse, Character } from "@/pages/ui/harrypotter";
 import Image from "next/image";
+import { PersonajesCard } from "./components/PersonajesCard";
 
 const fetchData = async (endpoint: string): Promise<Character[]> => {
   const response = await fetch(`http://localhost:3001/${endpoint}`);
@@ -40,7 +41,7 @@ export default function HarryPage() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const data = await fetchData("students");
+        const data = await fetchData("characters");
         setPersonajes(data);
       } catch (err: any) {
         setError(err.message);
@@ -61,7 +62,7 @@ export default function HarryPage() {
   return (
     <div className={Style.background}>
       <div className="flex flex-col items-center justify-center min-h-screen">
-        <div className="flex flex-col items-center mb-10 mt-48">
+        <div className="flex flex-col items-center mb-10 mt-24">
           <Image
             src="/Harry.svg"
             alt="Harry Potter"
@@ -69,18 +70,12 @@ export default function HarryPage() {
             height={200}
             style={{ maxWidth: "100%", height: "auto" }}
           />
-          <h1 className="text-3xl font-bold ">Selecciona tu filtro</h1>
+          <h1 className="text-3xl font-bold mt-4">Selecciona tu filtro</h1>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-8  p-8 md:p-0">
           {personajes.map((personaje) => (
             <div key={personaje.id}>
-              <Image
-                src={personaje.image.replace("http://", "https://")}
-                alt={personaje.name}
-                width={200}
-                height={200}
-              />
-              <p>{personaje.name}</p>
+              <PersonajesCard {...personaje} />
             </div>
           ))}
         </div>
