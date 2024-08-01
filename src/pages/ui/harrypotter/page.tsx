@@ -61,7 +61,14 @@ export default function HarryPage() {
   return (
     <div className={Style.background}>
       <div className="flex flex-col items-center justify-center min-h-screen">
-        <div>
+        <div className="flex flex-col items-center mb-10 mt-48">
+          <Image
+            src="/Harry.svg"
+            alt="Harry Potter"
+            width={200}
+            height={200}
+            style={{ maxWidth: "100%", height: "auto" }}
+          />
           <h1 className="text-3xl font-bold ">Selecciona tu filtro</h1>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-2 gap-10">
