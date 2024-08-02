@@ -10,10 +10,12 @@
     "json-server": "json-server --watch src/pages/api/db.json --port 3001"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.7",
     "json-server": "^1.0.0-beta.1",
     "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-redux": "^9.1.2"
   },
   "devDependencies": {
     "@types/node": "^20",

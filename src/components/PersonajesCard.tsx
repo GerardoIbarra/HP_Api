@@ -1,7 +1,11 @@
+"use client";
+
 import { Character } from "@/interface";
 import Image from "next/image";
 import React from "react";
 import styles from "../styles/personajes.module.css";
+import { useAppDispatch, useAppSelector } from "@/store";
+import { toggleFavorite } from "@/store/personajes/favorite";
 
 const getGradientClasses = (house: string) => {
   switch (house) {
@@ -29,6 +33,13 @@ export const PersonajesCard: React.FC<Character> = ({
   alive,
   hogwartsStudent,
 }: Character) => {
+  const isFavorite = useAppSelector((state) => !!state.favorite[name]);
+  const dispatch = useAppDispatch();
+
+  const OnClickTogle = () => {
+    dispatch(toggleFavorite(name));
+  };
+
   return (
     <div className={`${styles.card} ${!alive ? styles.inactive : ""}`}>
       <div
@@ -58,23 +69,45 @@ export const PersonajesCard: React.FC<Character> = ({
                   {hogwartsStudent ? "ESTUDIANTE" : "STAFF"}
                 </span>
               </div>
-              <button className="self-end">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="icon icon-tabler icon-tabler-bookmark"
-                  width="28"
-                  height="28"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1"
-                  stroke="#2c3e50"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M18 7v14l-6 -4l-6 4v-14a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4z" />
-                </svg>
-              </button>
+              <div className="self-end">
+                {!isFavorite ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="icon icon-tabler icon-tabler-bookmark"
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    strokeWidth="2"
+                    stroke="#000000"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M18 7v14l-6 -4l-6 4v-14a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4z" />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="icon icon-tabler icon-tabler-bookmark-filled"
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="#2c3e50"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M14 2a5 5 0 0 1 5 5v14a1 1 0 0 1 -1.555 .832l-5.445 -3.63l-5.444 3.63a1 1 0 0 1 -1.55 -.72l-.006 -.112v-14a5 5 0 0 1 5 -5h4z"
+                      strokeWidth="0"
+                      fill="black"
+                    />
+                  </svg>
+                )}
+              </div>
             </div>
           </div>
 
@@ -97,23 +130,45 @@ export const PersonajesCard: React.FC<Character> = ({
                   {hogwartsStudent ? "ESTUDIANTE" : "STAFF"}
                 </span>
               </div>
-              <button className={styles.button}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="icon icon-tabler icon-tabler-bookmark"
-                  width="28"
-                  height="28"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1"
-                  stroke="#2c3e50"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M18 7v14l-6 -4l-6 4v-14a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4z" />
-                </svg>
-              </button>
+              <div className={styles.button} onClick={() => OnClickTogle()}>
+                {!isFavorite ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="icon icon-tabler icon-tabler-bookmark "
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    strokeWidth="2"
+                    stroke="#000000"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M18 7v14l-6 -4l-6 4v-14a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4z" />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="icon icon-tabler icon-tabler-bookmark-filled"
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="#2c3e50"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M14 2a5 5 0 0 1 5 5v14a1 1 0 0 1 -1.555 .832l-5.445 -3.63l-5.444 3.63a1 1 0 0 1 -1.55 -.72l-.006 -.112v-14a5 5 0 0 1 5 -5h4z"
+                      strokeWidth="0"
+                      fill="black"
+                    />
+                  </svg>
+                )}
+              </div>
             </div>
             <h2 className={`md:text-xl ${styles.textSky} mt-2 mb-2 font-bold`}>
               {name}

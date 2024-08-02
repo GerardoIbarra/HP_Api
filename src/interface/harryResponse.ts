@@ -1,3 +1,8 @@
+export interface singlepersonal {
+  name: string;
+  image: string;
+}
+
 export interface HarryResponse {
   characters: Character[];
   staff: Character[];

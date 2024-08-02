@@ -36,6 +36,9 @@ export default function HarryPage() {
 
   return (
     <div className={Style.background}>
+      <div>
+        <button>Favoritos</button>
+      </div>
       <div className={Style.container}>
         <div className={Style.header}>
           <Image
@@ -43,7 +46,7 @@ export default function HarryPage() {
             alt="Harry Potter"
             width={200}
             height={200}
-            style={{ maxWidth: "100%", height: "auto" }}
+            priority={true}
           />
           <h1 className={Style.title}>Selecciona tu filtro</h1>
         </div>
