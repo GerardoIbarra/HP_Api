@@ -1,0 +1,136 @@
+.card {
+  max-width: 20rem;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    max-width: 100%;
+    width: 100%;
+    flex-direction: row;
+  }
+}
+
+.card.inactive {
+  background-color: #cbd5e0;
+}
+
+.gradient {
+  padding: 1rem;
+  @media (min-width: 768px) {
+    flex-shrink: 0;
+  }
+}
+
+.image {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  margin: 0 auto;
+  @media (min-width: 768px) {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+
+.content {
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+.textCenter {
+  text-align: center;
+  @media (min-width: 768px) {
+    text-align: left;
+  }
+}
+
+.smallScreen {
+  display: block;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.largeScreen {
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
+.textGray {
+  color: #4a5568;
+}
+
+.textSky {
+  color: #0284c7;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  @media (min-width: 768px) {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.button {
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  @media (min-width: 768px) {
+    margin-top: 0;
+  }
+}
+
+.textGrayLarge {
+  margin-top: 1rem;
+  color: #1a202c;
+}
+
+.flexRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.flexColumnLange {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexRowLange {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexCenterlange {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gapHorizontal {
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .flexColumnMedium {
+    flex-direction: row;
+  }
+
+  .gapHorizontalMedium {
+    gap: 1%;
+  }
+}

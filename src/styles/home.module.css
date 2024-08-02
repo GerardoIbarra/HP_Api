@@ -1,0 +1,73 @@
+.background {
+  background-image: url("/Background.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  margin-top: 6rem;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  gap: 7%;
+  @media (min-width: 768px) {
+    gap: 7rem;
+  }
+}
+
+.button {
+  background-color: #666666;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  width: 10rem;
+  height: 100%;
+  transition: background-color 0.3s;
+  opacity: 0.6;
+  border: 2px solid #108be7;
+  @media (min-width: 768px) {
+    width: 18rem;
+    height: 4rem;
+  }
+}
+
+.button:hover {
+  background-color: #a6a1d3;
+  border: 2px solid #6b63b5;
+}
+
+.button.active {
+  background-color: #6b63b5;
+  border: 2px solid #6b63b5;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 2rem;
+}
