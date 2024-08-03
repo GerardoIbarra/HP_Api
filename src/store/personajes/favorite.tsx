@@ -21,12 +21,18 @@ const favorite = createSlice({
   reducers: {
     toggleFavorite: (state, action: PayloadAction<string>) => {
       const name = action.payload;
+      const favoriteCount = Object.keys(state).length;
+
       if (!!state[name]) {
         delete state[name];
         return;
       }
 
-      state[name] = !state[name];
+      //      state[name] = !state[name];
+
+      if (favoriteCount < 5) {
+        state[name] = true;
+      }
     },
   },
 });

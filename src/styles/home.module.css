@@ -85,37 +85,3 @@
     justify-content: flex-end;
   }
 }
-
-.ButtonHeader {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px;
-  background-color: #6b63b5;
-  border: none;
-  color: white;
-  font-size: 16px;
-  margin: 0 1px;
-  cursor: pointer;
-}
-
-.ButtonHeader svg {
-  margin-left: 8px;
-  vertical-align: middle;
-  width: 20px;
-  height: 20px;
-}
-.ButtonHeaderleft {
-  border-top-left-radius: 15px;
-  @media (min-width: 946px) {
-    border-bottom-left-radius: 15px;
-    border-top-left-radius: 0px;
-  }
-}
-.ButtonHeaderRight {
-  border-top-right-radius: 15px;
-  @media (min-width: 946px) {
-    border-bottom-right-radius: 15px;
-    border-top-right-radius: 0px;
-  }
-}
