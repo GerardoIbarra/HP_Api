@@ -77,8 +77,8 @@ export const PersonajesCard: React.FC<Character> = ({
                     width="28"
                     height="28"
                     viewBox="0 0 24 24"
-                    strokeWidth="2"
-                    stroke="#000000"
+                    strokeWidth="1"
+                    stroke="#2c3e50"
                     fill="none"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -113,7 +113,7 @@ export const PersonajesCard: React.FC<Character> = ({
 
           <div className={styles.largeScreen}>
             <div
-              className={`${styles.flexColumnLange} ${styles.flexCenter} ${styles.flexColumnMedium}`}
+              className={`${styles.flexColumnLange} ${styles.flexCenterlange} ${styles.flexColumnMedium}`}
             >
               <div
                 className={`${styles.flexColumnLange} ${styles.flexRowLange} ${styles.gapHorizontalMedium}`}
@@ -134,12 +134,12 @@ export const PersonajesCard: React.FC<Character> = ({
                 {!isFavorite ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="icon icon-tabler icon-tabler-bookmark "
+                    className="icon icon-tabler icon-tabler-bookmark"
                     width="28"
                     height="28"
                     viewBox="0 0 24 24"
-                    strokeWidth="2"
-                    stroke="#000000"
+                    strokeWidth="1"
+                    stroke="#2c3e50"
                     fill="none"
                     strokeLinecap="round"
                     strokeLinejoin="round"

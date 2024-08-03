@@ -7,9 +7,9 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  @media (min-width: 768px) {
-    max-width: 100%;
-    width: 100%;
+  @media (min-width: 946px) {
+    max-width: 105%;
+    width: 105%;
     flex-direction: row;
   }
 }
@@ -20,7 +20,7 @@
 
 .gradient {
   padding: 1rem;
-  @media (min-width: 768px) {
+  @media (min-width: 946px) {
     flex-shrink: 0;
   }
 }
@@ -30,7 +30,7 @@
   height: 6rem;
   border-radius: 50%;
   margin: 0 auto;
-  @media (min-width: 768px) {
+  @media (min-width: 946px) {
     width: 12rem;
     height: 12rem;
   }
@@ -43,47 +43,48 @@
 
 .textCenter {
   text-align: center;
-  @media (min-width: 768px) {
+  @media (min-width: 946px) {
     text-align: left;
   }
 }
 
 .smallScreen {
   display: block;
-  @media (min-width: 768px) {
+  @media (min-width: 946px) {
     display: none;
   }
 }
 
 .largeScreen {
   display: none;
-  @media (min-width: 768px) {
+  @media (min-width: 946px) {
     display: block;
   }
 }
 
 .textGray {
   color: #4a5568;
+  font-size: 11px;
+  @media (min-width: 946px) {
+    font-size: 14px;
+  }
 }
 
 .textSky {
-  color: #0284c7;
+  color: #081f32;
 }
 
 .title {
-  font-size: 1rem;
+  font-size: 18px;
   font-weight: bold;
-  margin-bottom: 0.5rem;
-  @media (min-width: 768px) {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
+  @media (min-width: 946px) {
+    font-size: 30px;
   }
 }
 
 .button {
   margin-top: 0.5rem;
-  margin-left: 0.5rem;
-  @media (min-width: 768px) {
+  @media (min-width: 946px) {
     margin-top: 0;
   }
 }
@@ -91,8 +92,8 @@
 .textGrayLarge {
   margin-top: 1rem;
   color: #1a202c;
+  font-size: 15px;
 }
-
 .flexRow {
   display: flex;
   align-items: flex-start;
@@ -125,7 +126,7 @@
   gap: 0.5rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 946px) {
   .flexColumnMedium {
     flex-direction: row;
   }
