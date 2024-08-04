@@ -4,9 +4,11 @@ import { toggleFavorite } from "@/store/personajes/favorite";
 import Style from "../styles/buttonHeadder.module.css";
 import { RootState } from "@/interface";
 import Image from "next/image";
+import AddModal from "./AddModal";
 
 export const ButtonHeader = () => {
   const [showFavorites, setShowFavorites] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const favoriteState = useSelector((state: RootState) => state.favorite);
   const dispatch = useDispatch();
@@ -16,6 +18,10 @@ export const ButtonHeader = () => {
   };
 
   const favoriteCount = Object.keys(favoriteState).length;
+
+  const showModalClik = () => {
+    setShowModal(true);
+  };
 
   return (
     <div
@@ -110,6 +116,7 @@ export const ButtonHeader = () => {
         <div>
           <button
             className={`${Style.ButtonHeader} ${Style.ButtonHeaderRight}`}
+            onClick={showModalClik}
           >
             AGREGAR
             <svg
@@ -133,6 +140,8 @@ export const ButtonHeader = () => {
           </button>
         </div>
       </div>
+
+      {showModal && <AddModal onClose={() => setShowModal(false)} />}
 
       <div className={Style.desktopOnly}>
         {showFavorites && (
