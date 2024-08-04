@@ -75,6 +75,9 @@
   font-size: 14px;
   border-bottom: 1px solid #403b6d;
 }
+.favoriteItem:first-child {
+  padding-top: 8%;
+}
 .favoriteItem:last-child {
   border-bottom: none;
 }
@@ -102,5 +105,15 @@
   display: none;
   @media (min-width: 946px) {
     display: block;
+  }
+}
+
+.image {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  @media (min-width: 946px) {
+    width: 3rem;
+    height: 3rem;
   }
 }

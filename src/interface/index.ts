@@ -9,4 +9,6 @@ export type {
   Species,
   singlepersonal,
   RootState,
+  FavoriteCharacter,
+  FavoriteState,
 } from "./harryResponse";

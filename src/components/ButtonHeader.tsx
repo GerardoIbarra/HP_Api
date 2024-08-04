@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleFavorite } from "@/store/personajes/favorite";
 import Style from "../styles/buttonHeadder.module.css";
 import { RootState } from "@/interface";
+import Image from "next/image";
 
 export const ButtonHeader = () => {
   const [showFavorites, setShowFavorites] = useState(false);
@@ -35,7 +36,9 @@ export const ButtonHeader = () => {
             {Object.keys(favoriteState).map((name) => (
               <div key={name} className={Style.favoriteItem}>
                 {name}
-                <button onClick={() => dispatch(toggleFavorite(name))}>
+                <button
+                  onClick={() => dispatch(toggleFavorite({ name, image: "" }))}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="icon icon-tabler icon-tabler-trash"
@@ -129,32 +132,47 @@ export const ButtonHeader = () => {
             {Object.keys(favoriteState).length === 0 && (
               <div className={Style.favoriteItem}>No hay favoritos</div>
             )}
-            {Object.keys(favoriteState).map((name) => (
-              <div key={name} className={Style.favoriteItem}>
-                {name}
-                <button onClick={() => dispatch(toggleFavorite(name))}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="icon icon-tabler icon-tabler-trash"
-                    width="28"
-                    height="28"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="#ffffff"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+            {Object.entries(favoriteState).map(([name, { image }]) => {
+              console.log(name, image);
+              return (
+                <div key={name} className={Style.favoriteItem}>
+                  <Image
+                    src={image.replace("http://", "https://")}
+                    alt={name}
+                    width={100}
+                    height={100}
+                    className={Style.image}
+                    priority={false}
+                  />
+                  {name}
+                  <button
+                    onClick={() =>
+                      dispatch(toggleFavorite({ name, image: "" }))
+                    }
                   >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M4 7l16 0" />
-                    <path d="M10 11l0 6" />
-                    <path d="M14 11l0 6" />
-                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                  </svg>
-                </button>
-              </div>
-            ))}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="icon icon-tabler icon-tabler-trash"
+                      width="28"
+                      height="28"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M4 7l16 0" />
+                      <path d="M10 11l0 6" />
+                      <path d="M14 11l0 6" />
+                      <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                      <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                    </svg>
+                  </button>
+                </div>
+              );
+            })}
             {favoriteCount > 0 && (
               <>
                 <hr />

@@ -37,7 +37,7 @@ export const PersonajesCard: React.FC<Character> = ({
   const dispatch = useAppDispatch();
 
   const OnClickTogle = () => {
-    dispatch(toggleFavorite(name));
+    dispatch(toggleFavorite({ name, image }));
   };
 
   return (

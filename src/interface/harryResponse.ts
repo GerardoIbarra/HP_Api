@@ -80,10 +80,16 @@ export enum Core {
   UnicornHair = "unicorn hair",
   UnicornTailHair = "unicorn tail-hair",
 }
-interface FavoriteState {
-  [key: string]: boolean;
-}
 
 export interface RootState {
-  favorite: FavoriteState;
+  favorite: FavoriteCharacter;
+}
+
+export interface FavoriteCharacter {
+  image: string;
+  name: string;
+}
+
+export interface FavoriteState {
+  [key: string]: FavoriteCharacter;
 }

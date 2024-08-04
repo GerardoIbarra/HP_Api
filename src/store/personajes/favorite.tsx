@@ -1,16 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import {
-  Ancestry,
-  Core,
-  Gender,
-  HairColour,
-  House,
-  Species,
-} from "@/interface/harryResponse";
+import { FavoriteCharacter } from "@/interface/harryResponse";
 import { Character } from "@/interface";
 
 interface FavoriteState {
-  [key: string]: boolean;
+  [key: string]: FavoriteCharacter;
 }
 
 const initialState: FavoriteState = {};
@@ -19,8 +12,11 @@ const favorite = createSlice({
   name: "favorite",
   initialState,
   reducers: {
-    toggleFavorite: (state, action: PayloadAction<string>) => {
-      const name = action.payload;
+    toggleFavorite: (
+      state,
+      action: PayloadAction<{ name: string; image: string }>
+    ) => {
+      const { name, image } = action.payload;
       const favoriteCount = Object.keys(state).length;
 
       if (!!state[name]) {
@@ -31,7 +27,7 @@ const favorite = createSlice({
       //      state[name] = !state[name];
 
       if (favoriteCount < 5) {
-        state[name] = true;
+        state[name] = { name, image };
       }
     },
   },
