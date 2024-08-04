@@ -93,3 +93,14 @@ export interface FavoriteCharacter {
 export interface FavoriteState {
   [key: string]: FavoriteCharacter;
 }
+
+export interface CharacterModlAdd {
+  name: string;
+  dateOfBirth: string;
+  eyeColour: string;
+  hairColour: string;
+  gender: "male" | "female";
+  hogwartsStudent: boolean;
+  hogwartsStaff: boolean;
+  image: string | File | undefined;
+}

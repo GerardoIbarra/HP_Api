@@ -10,13 +10,18 @@
       "ancestry": "half-blood",
       "eyeColour": "green",
       "hairColour": "black",
-      "wand": { "wood": "holly", "core": "phoenix feather", "length": 11 },
+      "wand": {
+        "wood": "holly",
+        "core": "phoenix feather",
+        "length": 11
+      },
       "patronus": "stag",
       "hogwartsStudent": true,
       "hogwartsStaff": false,
       "actor": "Daniel Radcliffe",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/harry.jpg"
+      "image": "http://hp-api.herokuapp.com/images/harry.jpg",
+      "id": "3f51"
     },
     {
       "name": "Hermione Granger",
@@ -28,13 +33,18 @@
       "ancestry": "muggleborn",
       "eyeColour": "brown",
       "hairColour": "brown",
-      "wand": { "wood": "vine", "core": "dragon heartstring", "length": "" },
+      "wand": {
+        "wood": "vine",
+        "core": "dragon heartstring",
+        "length": ""
+      },
       "patronus": "otter",
       "hogwartsStudent": true,
       "hogwartsStaff": false,
       "actor": "Emma Watson",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/hermione.jpeg"
+      "image": "http://hp-api.herokuapp.com/images/hermione.jpeg",
+      "id": "f14f"
     },
     {
       "name": "Ron Weasley",
@@ -46,13 +56,18 @@
       "ancestry": "pure-blood",
       "eyeColour": "blue",
       "hairColour": "red",
-      "wand": { "wood": "willow", "core": "unicorn tail-hair", "length": 14 },
+      "wand": {
+        "wood": "willow",
+        "core": "unicorn tail-hair",
+        "length": 14
+      },
       "patronus": "Jack Russell terrier",
       "hogwartsStudent": true,
       "hogwartsStaff": false,
       "actor": "Rupert Grint",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/ron.jpg"
+      "image": "http://hp-api.herokuapp.com/images/ron.jpg",
+      "id": "c478"
     },
     {
       "name": "Draco Malfoy",
@@ -64,13 +79,18 @@
       "ancestry": "pure-blood",
       "eyeColour": "grey",
       "hairColour": "blonde",
-      "wand": { "wood": "hawthorn", "core": "unicorn tail-hair", "length": 10 },
+      "wand": {
+        "wood": "hawthorn",
+        "core": "unicorn tail-hair",
+        "length": 10
+      },
       "patronus": "",
       "hogwartsStudent": true,
       "hogwartsStaff": false,
       "actor": "Tom Felton",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/draco.jpg"
+      "image": "http://hp-api.herokuapp.com/images/draco.jpg",
+      "id": "9b14"
     },
     {
       "name": "Minerva McGonagall",
@@ -82,13 +102,18 @@
       "ancestry": "",
       "eyeColour": "",
       "hairColour": "black",
-      "wand": { "wood": "", "core": "", "length": "" },
+      "wand": {
+        "wood": "",
+        "core": "",
+        "length": ""
+      },
       "patronus": "tabby cat",
       "hogwartsStudent": false,
       "hogwartsStaff": true,
       "actor": "Dame Maggie Smith",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/mcgonagall.jpg"
+      "image": "http://hp-api.herokuapp.com/images/mcgonagall.jpg",
+      "id": "355c"
     },
     {
       "name": "Cedric Diggory",
@@ -100,13 +125,18 @@
       "ancestry": "",
       "eyeColour": "grey",
       "hairColour": "brown",
-      "wand": { "wood": "ash", "core": "unicorn hair", "length": 12.25 },
+      "wand": {
+        "wood": "ash",
+        "core": "unicorn hair",
+        "length": 12.25
+      },
       "patronus": "",
       "hogwartsStudent": true,
       "hogwartsStaff": false,
       "actor": "Robert Pattinson",
       "alive": false,
-      "image": "http://hp-api.herokuapp.com/images/cedric.png"
+      "image": "http://hp-api.herokuapp.com/images/cedric.png",
+      "id": "5a5b"
     },
     {
       "name": "Cho Chang",
@@ -118,13 +148,18 @@
       "ancestry": "",
       "eyeColour": "brown",
       "hairColour": "black",
-      "wand": { "wood": "", "core": "", "length": "" },
+      "wand": {
+        "wood": "",
+        "core": "",
+        "length": ""
+      },
       "patronus": "swan",
       "hogwartsStudent": true,
       "hogwartsStaff": false,
       "actor": "Katie Leung",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/cho.jpg"
+      "image": "http://hp-api.herokuapp.com/images/cho.jpg",
+      "id": "b627"
     },
     {
       "name": "Severus Snape",
@@ -136,13 +171,18 @@
       "ancestry": "half-blood",
       "eyeColour": "black",
       "hairColour": "black",
-      "wand": { "wood": "", "core": "", "length": "" },
+      "wand": {
+        "wood": "",
+        "core": "",
+        "length": ""
+      },
       "patronus": "doe",
       "hogwartsStudent": false,
       "hogwartsStaff": true,
       "actor": "Alan Rickman",
       "alive": false,
-      "image": "http://hp-api.herokuapp.com/images/snape.jpg"
+      "image": "http://hp-api.herokuapp.com/images/snape.jpg",
+      "id": "5a08"
     },
     {
       "name": "Rubeus Hagrid",
@@ -154,13 +194,18 @@
       "ancestry": "half-blood",
       "eyeColour": "black",
       "hairColour": "black",
-      "wand": { "wood": "oak", "core": "", "length": 16 },
+      "wand": {
+        "wood": "oak",
+        "core": "",
+        "length": 16
+      },
       "patronus": "",
       "hogwartsStudent": false,
       "hogwartsStaff": true,
       "actor": "Robbie Coltrane",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/hagrid.png"
+      "image": "http://hp-api.herokuapp.com/images/hagrid.png",
+      "id": "5a14"
     },
     {
       "name": "Neville Longbottom",
@@ -172,13 +217,18 @@
       "ancestry": "pure-blood",
       "eyeColour": "",
       "hairColour": "blonde",
-      "wand": { "wood": "cherry", "core": "unicorn tail-hair", "length": 13 },
+      "wand": {
+        "wood": "cherry",
+        "core": "unicorn tail-hair",
+        "length": 13
+      },
       "patronus": "",
       "hogwartsStudent": true,
       "hogwartsStaff": false,
       "actor": "Matthew Lewis",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/neville.jpg"
+      "image": "http://hp-api.herokuapp.com/images/neville.jpg",
+      "id": "ce61"
     },
     {
       "name": "Luna Lovegood",
@@ -190,13 +240,18 @@
       "ancestry": "",
       "eyeColour": "grey",
       "hairColour": "blonde",
-      "wand": { "wood": "", "core": "", "length": "" },
+      "wand": {
+        "wood": "",
+        "core": "",
+        "length": ""
+      },
       "patronus": "hare",
       "hogwartsStudent": true,
       "hogwartsStaff": false,
       "actor": "Evanna Lynch",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/luna.jpg"
+      "image": "http://hp-api.herokuapp.com/images/luna.jpg",
+      "id": "8e96"
     },
     {
       "name": "Ginny Weasley",
@@ -208,13 +263,18 @@
       "ancestry": "pure-blood",
       "eyeColour": "brown",
       "hairColour": "red",
-      "wand": { "wood": "yew", "core": "", "length": "" },
+      "wand": {
+        "wood": "yew",
+        "core": "",
+        "length": ""
+      },
       "patronus": "horse",
       "hogwartsStudent": true,
       "hogwartsStaff": false,
       "actor": "Bonnie Wright",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/ginny.jpg"
+      "image": "http://hp-api.herokuapp.com/images/ginny.jpg",
+      "id": "26f5"
     },
     {
       "name": "Sirius Black",
@@ -226,13 +286,18 @@
       "ancestry": "pure-blood",
       "eyeColour": "grey",
       "hairColour": "black",
-      "wand": { "wood": "", "core": "", "length": "" },
+      "wand": {
+        "wood": "",
+        "core": "",
+        "length": ""
+      },
       "patronus": "hare",
       "hogwartsStudent": false,
       "hogwartsStaff": false,
       "actor": "Gary Oldman",
       "alive": false,
-      "image": "http://hp-api.herokuapp.com/images/sirius.JPG"
+      "image": "http://hp-api.herokuapp.com/images/sirius.JPG",
+      "id": "936f"
     },
     {
       "name": "Remus Lupin",
@@ -254,7 +319,8 @@
       "hogwartsStaff": true,
       "actor": "David Thewlis",
       "alive": false,
-      "image": "http://hp-api.herokuapp.com/images/lupin.jpg"
+      "image": "http://hp-api.herokuapp.com/images/lupin.jpg",
+      "id": "9583"
     },
     {
       "name": "Arthur Weasley",
@@ -266,13 +332,18 @@
       "ancestry": "pure-blood",
       "eyeColour": "blue",
       "hairColour": "red",
-      "wand": { "wood": "", "core": "", "length": "" },
+      "wand": {
+        "wood": "",
+        "core": "",
+        "length": ""
+      },
       "patronus": "weasel",
       "hogwartsStudent": false,
       "hogwartsStaff": false,
       "actor": "Mark Williams",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/arthur.jpg"
+      "image": "http://hp-api.herokuapp.com/images/arthur.jpg",
+      "id": "7eb6"
     },
     {
       "name": "Bellatrix Lestrange",
@@ -294,7 +365,8 @@
       "hogwartsStaff": false,
       "actor": "Helena Bonham Carter",
       "alive": false,
-      "image": "http://hp-api.herokuapp.com/images/bellatrix.jpg"
+      "image": "http://hp-api.herokuapp.com/images/bellatrix.jpg",
+      "id": "05c2"
     },
     {
       "name": "Lord Voldemort",
@@ -306,13 +378,18 @@
       "ancestry": "half-blood",
       "eyeColour": "red",
       "hairColour": "bald",
-      "wand": { "wood": "yew", "core": "phoenix feather", "length": 13.5 },
+      "wand": {
+        "wood": "yew",
+        "core": "phoenix feather",
+        "length": 13.5
+      },
       "patronus": "",
       "hogwartsStudent": false,
       "hogwartsStaff": false,
       "actor": "Ralph Fiennes",
       "alive": false,
-      "image": "http://hp-api.herokuapp.com/images/voldemort.jpg"
+      "image": "http://hp-api.herokuapp.com/images/voldemort.jpg",
+      "id": "9989"
     },
     {
       "name": "Horace Slughorn",
@@ -334,7 +411,8 @@
       "hogwartsStaff": true,
       "actor": "Jim Broadbent",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/slughorn.JPG"
+      "image": "http://hp-api.herokuapp.com/images/slughorn.JPG",
+      "id": "6343"
     },
     {
       "name": "Kingsley Shacklebolt",
@@ -346,13 +424,18 @@
       "ancestry": "pure-blood",
       "eyeColour": "brown",
       "hairColour": "brown",
-      "wand": { "wood": "", "core": "", "length": "" },
+      "wand": {
+        "wood": "",
+        "core": "",
+        "length": ""
+      },
       "patronus": "lynx",
       "hogwartsStudent": false,
       "hogwartsStaff": false,
       "actor": "George Harris",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/kingsley.jpg"
+      "image": "http://hp-api.herokuapp.com/images/kingsley.jpg",
+      "id": "6d6c"
     },
     {
       "name": "Dolores Umbridge",
@@ -364,13 +447,18 @@
       "ancestry": "half-blood",
       "eyeColour": "brown",
       "hairColour": "grey",
-      "wand": { "wood": "birch", "core": "dragon heartstring", "length": 8 },
+      "wand": {
+        "wood": "birch",
+        "core": "dragon heartstring",
+        "length": 8
+      },
       "patronus": "persian cat",
       "hogwartsStudent": false,
       "hogwartsStaff": true,
       "actor": "Imelda Staunton",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/umbridge.jpg"
+      "image": "http://hp-api.herokuapp.com/images/umbridge.jpg",
+      "id": "22da"
     },
     {
       "name": "Lucius Malfoy",
@@ -382,13 +470,18 @@
       "ancestry": "pure-blood",
       "eyeColour": "grey",
       "hairColour": "blonde",
-      "wand": { "wood": "elm", "core": "dragon heartstring", "length": 18 },
+      "wand": {
+        "wood": "elm",
+        "core": "dragon heartstring",
+        "length": 18
+      },
       "patronus": "",
       "hogwartsStudent": false,
       "hogwartsStaff": false,
       "actor": "Jason Isaacs",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/lucius.jpg"
+      "image": "http://hp-api.herokuapp.com/images/lucius.jpg",
+      "id": "1abc"
     },
     {
       "name": "Vincent Crabbe",
@@ -400,13 +493,18 @@
       "ancestry": "pure-blood",
       "eyeColour": "black",
       "hairColour": "black",
-      "wand": { "wood": "", "core": "", "length": "" },
+      "wand": {
+        "wood": "",
+        "core": "",
+        "length": ""
+      },
       "patronus": "",
       "hogwartsStudent": true,
       "hogwartsStaff": false,
       "actor": "Jamie Waylett",
       "alive": false,
-      "image": "http://hp-api.herokuapp.com/images/crabbe.jpg"
+      "image": "http://hp-api.herokuapp.com/images/crabbe.jpg",
+      "id": "47ec"
     },
     {
       "name": "Gregory Goyle",
@@ -418,13 +516,18 @@
       "ancestry": "pure-blood",
       "eyeColour": "",
       "hairColour": "brown",
-      "wand": { "wood": "", "core": "", "length": "" },
+      "wand": {
+        "wood": "",
+        "core": "",
+        "length": ""
+      },
       "patronus": "",
       "hogwartsStudent": true,
       "hogwartsStaff": false,
       "actor": "Josh Herdman",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/goyle.jpg"
+      "image": "http://hp-api.herokuapp.com/images/goyle.jpg",
+      "id": "1c9a"
     },
     {
       "name": "Mrs Norris",
@@ -436,13 +539,18 @@
       "ancestry": "",
       "eyeColour": "yellow",
       "hairColour": "brown",
-      "wand": { "wood": "", "core": "", "length": "" },
+      "wand": {
+        "wood": "",
+        "core": "",
+        "length": ""
+      },
       "patronus": "",
       "hogwartsStudent": false,
       "hogwartsStaff": true,
       "actor": "Maxime, Alanis and Tommy the cats",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/norris.JPG"
+      "image": "http://hp-api.herokuapp.com/images/norris.JPG",
+      "id": "80af"
     },
     {
       "name": "Argus Filch",
@@ -454,13 +562,29 @@
       "ancestry": "squib",
       "eyeColour": "",
       "hairColour": "grey",
-      "wand": { "wood": "", "core": "", "length": "" },
+      "wand": {
+        "wood": "",
+        "core": "",
+        "length": ""
+      },
       "patronus": "",
       "hogwartsStudent": false,
       "hogwartsStaff": true,
       "actor": "David Bradley",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/filch.jpg"
+      "image": "http://hp-api.herokuapp.com/images/filch.jpg",
+      "id": "af6e"
+    },
+    {
+      "id": "787b",
+      "name": "Luis Gerardo",
+      "dateOfBirth": "2000-08-18",
+      "eyeColour": "dfgdgdg",
+      "hairColour": "dfgdfgdfgd",
+      "gender": "female",
+      "hogwartsStudent": false,
+      "hogwartsStaff": true,
+      "image": ""
     }
   ],
   "staff": [
@@ -474,13 +598,18 @@
       "ancestry": "",
       "eyeColour": "",
       "hairColour": "black",
-      "wand": { "wood": "", "core": "", "length": "" },
+      "wand": {
+        "wood": "",
+        "core": "",
+        "length": ""
+      },
       "patronus": "tabby cat",
       "hogwartsStudent": false,
       "hogwartsStaff": true,
       "actor": "Dame Maggie Smith",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/mcgonagall.jpg"
+      "image": "http://hp-api.herokuapp.com/images/mcgonagall.jpg",
+      "id": "e992"
     },
     {
       "name": "Severus Snape",
@@ -492,13 +621,18 @@
       "ancestry": "half-blood",
       "eyeColour": "black",
       "hairColour": "black",
-      "wand": { "wood": "", "core": "", "length": "" },
+      "wand": {
+        "wood": "",
+        "core": "",
+        "length": ""
+      },
       "patronus": "doe",
       "hogwartsStudent": false,
       "hogwartsStaff": true,
       "actor": "Alan Rickman",
       "alive": false,
-      "image": "http://hp-api.herokuapp.com/images/snape.jpg"
+      "image": "http://hp-api.herokuapp.com/images/snape.jpg",
+      "id": "826f"
     },
     {
       "name": "Rubeus Hagrid",
@@ -510,13 +644,18 @@
       "ancestry": "half-blood",
       "eyeColour": "black",
       "hairColour": "black",
-      "wand": { "wood": "oak", "core": "", "length": 16 },
+      "wand": {
+        "wood": "oak",
+        "core": "",
+        "length": 16
+      },
       "patronus": "",
       "hogwartsStudent": false,
       "hogwartsStaff": true,
       "actor": "Robbie Coltrane",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/hagrid.png"
+      "image": "http://hp-api.herokuapp.com/images/hagrid.png",
+      "id": "dc6e"
     },
     {
       "name": "Remus Lupin",
@@ -538,7 +677,8 @@
       "hogwartsStaff": true,
       "actor": "David Thewlis",
       "alive": false,
-      "image": "http://hp-api.herokuapp.com/images/lupin.jpg"
+      "image": "http://hp-api.herokuapp.com/images/lupin.jpg",
+      "id": "d54d"
     },
     {
       "name": "Horace Slughorn",
@@ -560,7 +700,8 @@
       "hogwartsStaff": true,
       "actor": "Jim Broadbent",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/slughorn.JPG"
+      "image": "http://hp-api.herokuapp.com/images/slughorn.JPG",
+      "id": "3802"
     },
     {
       "name": "Dolores Umbridge",
@@ -572,13 +713,18 @@
       "ancestry": "half-blood",
       "eyeColour": "brown",
       "hairColour": "grey",
-      "wand": { "wood": "birch", "core": "dragon heartstring", "length": 8 },
+      "wand": {
+        "wood": "birch",
+        "core": "dragon heartstring",
+        "length": 8
+      },
       "patronus": "persian cat",
       "hogwartsStudent": false,
       "hogwartsStaff": true,
       "actor": "Imelda Staunton",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/umbridge.jpg"
+      "image": "http://hp-api.herokuapp.com/images/umbridge.jpg",
+      "id": "da1f"
     },
     {
       "name": "Mrs Norris",
@@ -590,13 +736,18 @@
       "ancestry": "",
       "eyeColour": "yellow",
       "hairColour": "brown",
-      "wand": { "wood": "", "core": "", "length": "" },
+      "wand": {
+        "wood": "",
+        "core": "",
+        "length": ""
+      },
       "patronus": "",
       "hogwartsStudent": false,
       "hogwartsStaff": true,
       "actor": "Maxime, Alanis and Tommy the cats",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/norris.JPG"
+      "image": "http://hp-api.herokuapp.com/images/norris.JPG",
+      "id": "90e1"
     },
     {
       "name": "Argus Filch",
@@ -608,13 +759,18 @@
       "ancestry": "squib",
       "eyeColour": "",
       "hairColour": "grey",
-      "wand": { "wood": "", "core": "", "length": "" },
+      "wand": {
+        "wood": "",
+        "core": "",
+        "length": ""
+      },
       "patronus": "",
       "hogwartsStudent": false,
       "hogwartsStaff": true,
       "actor": "David Bradley",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/filch.jpg"
+      "image": "http://hp-api.herokuapp.com/images/filch.jpg",
+      "id": "3123"
     }
   ],
   "students": [
@@ -638,7 +794,8 @@
       "hogwartsStaff": false,
       "actor": "Daniel Radcliffe",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/harry.jpg"
+      "image": "http://hp-api.herokuapp.com/images/harry.jpg",
+      "id": "931e"
     },
     {
       "name": "Hermione Granger",
@@ -660,7 +817,8 @@
       "hogwartsStaff": false,
       "actor": "Emma Watson",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/hermione.jpeg"
+      "image": "http://hp-api.herokuapp.com/images/hermione.jpeg",
+      "id": "22ad"
     },
     {
       "name": "Ron Weasley",
@@ -682,7 +840,8 @@
       "hogwartsStaff": false,
       "actor": "Rupert Grint",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/ron.jpg"
+      "image": "http://hp-api.herokuapp.com/images/ron.jpg",
+      "id": "974e"
     },
     {
       "name": "Draco Malfoy",
@@ -704,7 +863,8 @@
       "hogwartsStaff": false,
       "actor": "Tom Felton",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/draco.jpg"
+      "image": "http://hp-api.herokuapp.com/images/draco.jpg",
+      "id": "dc6c"
     },
     {
       "name": "Cedric Diggory",
@@ -726,7 +886,8 @@
       "hogwartsStaff": false,
       "actor": "Robert Pattinson",
       "alive": false,
-      "image": "http://hp-api.herokuapp.com/images/cedric.png"
+      "image": "http://hp-api.herokuapp.com/images/cedric.png",
+      "id": "0035"
     },
     {
       "name": "Cho Chang",
@@ -748,7 +909,8 @@
       "hogwartsStaff": false,
       "actor": "Katie Leung",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/cho.jpg"
+      "image": "http://hp-api.herokuapp.com/images/cho.jpg",
+      "id": "fa70"
     },
     {
       "name": "Neville Longbottom",
@@ -770,7 +932,8 @@
       "hogwartsStaff": false,
       "actor": "Matthew Lewis",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/neville.jpg"
+      "image": "http://hp-api.herokuapp.com/images/neville.jpg",
+      "id": "2dbc"
     },
     {
       "name": "Luna Lovegood",
@@ -792,7 +955,8 @@
       "hogwartsStaff": false,
       "actor": "Evanna Lynch",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/luna.jpg"
+      "image": "http://hp-api.herokuapp.com/images/luna.jpg",
+      "id": "b72c"
     },
     {
       "name": "Ginny Weasley",
@@ -814,7 +978,8 @@
       "hogwartsStaff": false,
       "actor": "Bonnie Wright",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/ginny.jpg"
+      "image": "http://hp-api.herokuapp.com/images/ginny.jpg",
+      "id": "e3e6"
     },
     {
       "name": "Vincent Crabbe",
@@ -836,7 +1001,8 @@
       "hogwartsStaff": false,
       "actor": "Jamie Waylett",
       "alive": false,
-      "image": "http://hp-api.herokuapp.com/images/crabbe.jpg"
+      "image": "http://hp-api.herokuapp.com/images/crabbe.jpg",
+      "id": "a498"
     },
     {
       "name": "Gregory Goyle",
@@ -858,7 +1024,8 @@
       "hogwartsStaff": false,
       "actor": "Josh Herdman",
       "alive": true,
-      "image": "http://hp-api.herokuapp.com/images/goyle.jpg"
+      "image": "http://hp-api.herokuapp.com/images/goyle.jpg",
+      "id": "0466"
     }
   ]
 }

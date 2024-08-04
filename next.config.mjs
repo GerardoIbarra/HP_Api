@@ -10,6 +10,12 @@ const nextConfig = {
         port: "",
         pathname: "/images/**",
       },
+      {
+        protocol: "https",
+        hostname: "e0.pxfuel.com",
+        port: "",
+        pathname: "/wallpapers/**",
+      },
     ],
   },
 };

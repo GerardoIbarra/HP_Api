@@ -11,4 +11,5 @@ export type {
   RootState,
   FavoriteCharacter,
   FavoriteState,
+  CharacterModlAdd,
 } from "./harryResponse";

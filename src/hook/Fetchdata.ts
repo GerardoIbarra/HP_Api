@@ -1,4 +1,5 @@
-import { Character } from "@/interface";
+import { Character, CharacterModlAdd } from "@/interface";
+import Swal from "sweetalert2";
 
 export const fetchData = async (endpoint: string): Promise<Character[]> => {
   const response = await fetch(`http://localhost:3001/${endpoint}`);
@@ -28,4 +29,33 @@ export const fetchData = async (endpoint: string): Promise<Character[]> => {
   }));
 
   return personajes;
+};
+
+export const addCharacterModal = async (
+  character: CharacterModlAdd,
+  endpoint: string
+): Promise<void> => {
+  const url = `http://localhost:3001/${endpoint}`;
+
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(character),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+      Swal.fire({
+        title: "Personaje añadido",
+        text: "Personaje añadido con exito",
+        icon: "success",
+      });
+    }
+  } catch (error) {
+    console.error("Error al añadir personaje:", error);
+  }
 };

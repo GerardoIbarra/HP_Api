@@ -48,7 +48,11 @@ export const PersonajesCard: React.FC<Character> = ({
         )}`}
       >
         <Image
-          src={image.replace("http://", "https://")}
+          src={
+            image
+              ? image.replace("http://", "https://")
+              : "https://e0.pxfuel.com/wallpapers/290/653/desktop-wallpaper-harry-potter-harry-potter-hedwig-harry-potter-drawings-harry-potter.jpg"
+          }
           alt={name}
           width={200}
           height={200}
