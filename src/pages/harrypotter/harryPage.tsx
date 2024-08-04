@@ -4,7 +4,7 @@ import Style from "../../styles/home.module.css";
 import { fetchData } from "../../hook/Fetchdata";
 import { Character } from "@/interface";
 import { PersonajesCard } from "@/components/PersonajesCard";
-import { ButtonHeader } from "@/components/buttonHeader";
+import { ButtonHeader } from "@/components/ButtonHeader";
 export default function HarryPage() {
   const [personajes, setPersonajes] = useState<Character[]>([]);
   const [error, setError] = useState<string | null>(null);

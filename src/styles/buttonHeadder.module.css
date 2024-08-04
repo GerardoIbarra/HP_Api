@@ -58,12 +58,14 @@
   border: 1px solid #357ab8;
 }
 .favoritesList {
+  height: 100%;
   background-color: #6b63b5;
   padding: 10px;
   border-radius: 0 0 6px 6px;
   margin-bottom: -14px;
   @media (min-width: 946px) {
     margin-top: -13px;
+    height: 100%;
   }
 }
 
@@ -76,7 +78,10 @@
   border-bottom: 1px solid #403b6d;
 }
 .favoriteItem:first-child {
-  padding-top: 8%;
+  @media (min-width: 946px) {
+    padding-top: 8%;
+    padding-bottom: 4%;
+  }
 }
 .favoriteItem:last-child {
   border-bottom: none;
@@ -109,8 +114,8 @@
 }
 
 .image {
-  width: 6rem;
-  height: 6rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   @media (min-width: 946px) {
     width: 3rem;
