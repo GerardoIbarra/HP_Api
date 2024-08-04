@@ -8,4 +8,5 @@ export type {
   House,
   Species,
   singlepersonal,
+  RootState,
 } from "./harryResponse";

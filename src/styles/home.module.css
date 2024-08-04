@@ -78,10 +78,9 @@
 }
 .buttonContainerHeader {
   display: flex;
-  justify-content: center;
-  width: 100%;
+  justify-content: end;
+  box-sizing: border-box;
+  max-width: 80%;
   @media (min-width: 946px) {
-    width: 80%;
-    justify-content: flex-end;
   }
 }

@@ -75,7 +75,7 @@
 }
 
 .title {
-  font-size: 18px;
+  font-size: 10px;
   font-weight: bold;
   @media (min-width: 946px) {
     font-size: 30px;
