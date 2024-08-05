@@ -1,40 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+El examen debe cumplir con las siguientes características:
+• Debe usarse React en su versión 18 mediante el framework de Next.js.
+• Typescript para el desarrollo.
+• CSS Modules para el manejo de estilos.
+• La funcionalidad para agregar un nuevo personaje deberá de realizarse
+implementando la librería JSON server.
+La aplicación debe de seguir los requerimientos mostrados en
+el look &feel (modo mobile, estados de botones, cambio de color de
+acuerdo a la casa que pertenece el personaje etc.
+• En la funcionalidad de agregar a favoritos se utilizará Redux saga, toolkit o
+el que se considere.
+• Preferentemente deberás incluir pruebas unitarias.
 
-## Getting Started
+Las instrucciones para levantar el proyecto y correr
+pruebas unitarias.
 
-First, run the development server:
+1.- Clonas el repositorio
+2.- Desde la terminal accedes a la direccion en donde esta la carpeta y agregas este comando : code .
+ese comando te va abrir en visual estudio la carpeta del codigo
+3.- Una vez que ya accediste se puede agrehar en la terminal el comando de: npm i
+ya que ermino agregaremos el siguiente comando en la terminal : npm run dev
+ese comando nos levantara el proyecto
+4.- para levantar los endpoint usaremos el comando: npm run json-server
+5.- y para correr las pruebas unicarios usamos el comando de: npm test
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+o ¿Qué es lo que ms te gustó de tu desarrollo?
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+-Es la primera vez que hago un proyecto con algo relacionado con harry potter a si que me gusto mucho la mistica del proyecto ademas de poder trabajar con typescript.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+o Si hubieras tenido más tiempo ¿qué hubieras mejorado o
+qué más hubieras hecho?
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+-Me hubiera gustado agregar la permanencia del localstorage en los favoritos, cuando teniamos personajes agregados en favoritos.
+-Animaciones
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- una pagina extra que cuando se le diera click al persona te saliera informacion detallada del personaje.
+- Solicitar mas datos en el formulario para poder mostrar despues en el las tarjetas los valores correspondientes de casas, si esta vivo.
+  -Una vez despues de agregar nuevos personajes me hubiera gustado tambien agregar un manejador de estado para que la data se recargara automaticamente en la lista con los nuevos personajes agregados.
+  -Tambien me hubiera gustado implementar con express o prisma o con otro servicio el alojamiento de imagenes ya que en este momento solamente lo harckodea la imagen que se solicita en el formulario de nuevo personaje, ya que no pude crear un url a traves de la imagen agregada.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+o Descríbenos un pain point o bug con el que te hayas encontrado y
+como lo solucionaste.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- tuve un problema con la creacion del boton collapse, no me salia en un inicio lo pude solucionar primero con taiwind y de ahi pase los estilos a css.
+  -Tambien al inicio a la hora de guardar a favoritos solamente guardaba el nombre y cuando quise incluir la imagen ahi es donde me tranaba la lista en mi componenete ya que aunque ya habia hecho las configuraciones necesarias en toolkit no me habia percatado que segui usando Object.key jeje hasta que lo cambie es que pude seguir adelante.
