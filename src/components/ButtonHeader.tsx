@@ -68,7 +68,6 @@ const FavoriteList = ({
   );
 };
 
-// ButtonHeader component
 export const ButtonHeader = () => {
   const [showFavorites, setShowFavorites] = useState(false);
   const [showModal, setShowModal] = useState(false);

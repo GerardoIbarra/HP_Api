@@ -16,6 +16,12 @@ const nextConfig = {
         port: "",
         pathname: "/wallpapers/**",
       },
+      {
+        protocol: "https",
+        hostname: "reactormag.com",
+        port: "",
+        pathname: "/wp-content/uploads/**",
+      },
     ],
   },
 };
