@@ -585,6 +585,18 @@
       "hogwartsStudent": false,
       "hogwartsStaff": true,
       "image": ""
+    },
+    {
+      "id": "6d1b",
+      "name": "Pepe Prueba",
+      "dateOfBirth": "2024-08-05",
+      "eyeColour": "negro",
+      "hairColour": "negro",
+      "gender": "male",
+      "hogwartsStudent": true,
+      "hogwartsStaff": false,
+      "image": "https://res.cloudinary.com/dwhs64chr/image/upload/v1722895413/edited_image_cv_ewojko.png",
+      "alive": true
     }
   ],
   "staff": [
@@ -1026,6 +1038,18 @@
       "alive": true,
       "image": "http://hp-api.herokuapp.com/images/goyle.jpg",
       "id": "0466"
+    },
+    {
+      "id": "9790",
+      "name": "Pepe Prueba",
+      "dateOfBirth": "2024-08-05",
+      "eyeColour": "negro",
+      "hairColour": "negro",
+      "gender": "male",
+      "hogwartsStudent": true,
+      "hogwartsStaff": false,
+      "image": "https://res.cloudinary.com/dwhs64chr/image/upload/v1722895413/edited_image_cv_ewojko.png",
+      "alive": true
     }
   ]
 }
