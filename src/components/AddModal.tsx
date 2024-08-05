@@ -1,13 +1,15 @@
-"use client";
 import React, { useState } from "react";
 import Style from "../styles/modalNew.module.css";
 import { addCharacterModal } from "../hook/Fetchdata";
 import { CharacterModlAdd } from "@/interface";
+import RadioField from "./RadioField";
+import InputField from "./InputField";
 
 interface ModalProps {
   onClose: () => void;
 }
-const AddModal: React.FC<ModalProps> = function ({ onClose }) {
+
+const AddModal: React.FC<ModalProps> = ({ onClose }) => {
   const [isActive, setIsActive] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -20,52 +22,57 @@ const AddModal: React.FC<ModalProps> = function ({ onClose }) {
     image: undefined as string | undefined,
   });
 
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, type, checked, files } = event.target;
+    switch (type) {
+      case "file":
+        if (files?.[0]) {
+          setFormData({ ...formData, image: files[0].name });
+        }
+        break;
+      case "radio":
+        if (name === "genero") {
+          setFormData({
+            ...formData,
+            gender: value === "Hombre" ? "male" : "female",
+          });
+        } else if (name === "posicion") {
+          setFormData({
+            ...formData,
+            hogwartsStudent: value === "Estudiante",
+            hogwartsStaff: value === "Staff",
+          });
+        }
+        break;
+      default:
+        setFormData({ ...formData, [name]: value });
+        break;
+    }
+  };
+
   const handleSubmit = async (event: React.FormEvent) => {
     setIsActive(!isActive);
     event.preventDefault();
 
     const dataToSend: CharacterModlAdd = {
-      name: formData.name,
-      dateOfBirth: formData.dateOfBirth,
-      eyeColour: formData.eyeColour,
-      hairColour: formData.hairColour,
-      gender: formData.gender === "Hombre" ? "male" : "female",
-      hogwartsStudent: formData.hogwartsStudent,
-      hogwartsStaff: formData.hogwartsStaff,
+      ...formData,
+      gender: formData.gender === "male" ? "male" : "female",
       image: formData.image || "",
     };
 
     try {
-      await addCharacterModal(dataToSend, "characters");
-      await addCharacterModal(
-        dataToSend,
-        dataToSend.hogwartsStudent ? "students" : "staff"
+      const endpoints = [
+        "characters",
+        formData.hogwartsStudent ? "students" : "staff",
+      ];
+      await Promise.all(
+        endpoints.map((endpoint) => addCharacterModal(dataToSend, endpoint))
       );
     } catch (error) {
       console.error("Error al añadir personaje:", error);
     }
 
     onClose();
-  };
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type, checked, files } = event.target;
-    if (type === "file" && files?.[0]) {
-      setFormData({ ...formData, image: files?.[0].name });
-    } else if (type === "radio" && name === "genero") {
-      setFormData({
-        ...formData,
-        gender: value === "Hombre" ? "male" : "female",
-      });
-    } else if (type === "radio" && name === "posicion") {
-      setFormData({
-        ...formData,
-        hogwartsStudent: value === "Estudiante",
-        hogwartsStaff: value === "Staff",
-      });
-    } else {
-      setFormData({ ...formData, [name]: value });
-    }
   };
 
   return (
@@ -94,109 +101,88 @@ const AddModal: React.FC<ModalProps> = function ({ onClose }) {
             </div>
           </div>
           <div className={Style.centercontent}>
-            <label>
-              NOMBRE
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </label>
-            <label>
-              CUMPLEAÑOS
-              <input
-                type="date"
-                name="dateOfBirth"
-                value={formData.dateOfBirth}
-                onChange={handleChange}
-                required
-              />
-            </label>
+            <InputField
+              label="NOMBRE"
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+            <InputField
+              label="CUMPLEAÑOS"
+              type="date"
+              name="dateOfBirth"
+              value={formData.dateOfBirth}
+              onChange={handleChange}
+              required
+            />
           </div>
           <div className={Style.centercontent}>
-            <label>
-              COLOR DE OJOS
-              <input
-                type="text"
-                name="eyeColour"
-                value={formData.eyeColour}
-                onChange={handleChange}
-                required
-              />
-            </label>
-            <label>
-              COLOR DE PELO
-              <input
-                type="text"
-                name="hairColour"
-                value={formData.hairColour}
-                onChange={handleChange}
-                required
-              />
-            </label>
+            <InputField
+              label="COLOR DE OJOS"
+              type="text"
+              name="eyeColour"
+              value={formData.eyeColour}
+              onChange={handleChange}
+              required
+            />
+            <InputField
+              label="COLOR DE PELO"
+              type="text"
+              name="hairColour"
+              value={formData.hairColour}
+              onChange={handleChange}
+              required
+            />
           </div>
           <div className={Style.centercontent}>
             <fieldset>
               <legend className={Style.legend}>GÉNERO</legend>
               <div className={Style.centerOptions}>
-                <label className={Style.radiolabel}>
-                  <input
-                    type="radio"
-                    name="genero"
-                    value="Mujer"
-                    checked={formData.gender === "female "}
-                    onChange={handleChange}
-                    required
-                  />
-                  Mujer
-                </label>
-                <label className={Style.radiolabel}>
-                  <input
-                    type="radio"
-                    name="genero"
-                    value="Hombre"
-                    onChange={handleChange}
-                    checked={formData.gender === "male"}
-                    required
-                  />
-                  Hombre
-                </label>
+                <RadioField
+                  label="Mujer"
+                  name="genero"
+                  value="Mujer"
+                  checked={formData.gender === "female"}
+                  onChange={handleChange}
+                />
+                <RadioField
+                  label="Hombre"
+                  name="genero"
+                  value="Hombre"
+                  checked={formData.gender === "male"}
+                  onChange={handleChange}
+                />
               </div>
             </fieldset>
             <fieldset>
               <legend className={Style.legend}>POSICIÓN</legend>
               <div className={Style.centerOptions}>
-                <label className={Style.radiolabel}>
-                  <input
-                    type="radio"
-                    name="posicion"
-                    value="Estudiante"
-                    onChange={handleChange}
-                    checked={formData.hogwartsStudent}
-                    required
-                  />
-                  Estudiante
-                </label>
-                <label className={Style.radiolabel}>
-                  <input
-                    type="radio"
-                    name="posicion"
-                    value="Staff"
-                    onChange={handleChange}
-                    checked={formData.hogwartsStaff}
-                    required
-                  />
-                  Staff
-                </label>
+                <RadioField
+                  label="Estudiante"
+                  name="posicion"
+                  value="Estudiante"
+                  checked={formData.hogwartsStudent}
+                  onChange={handleChange}
+                />
+                <RadioField
+                  label="Staff"
+                  name="posicion"
+                  value="Staff"
+                  checked={formData.hogwartsStaff}
+                  onChange={handleChange}
+                />
               </div>
             </fieldset>
           </div>
-          <label>
-            FOTOGRAFIA (input type file):
-            <input type="file" name="fotografia" />
-          </label>
+          <InputField
+            label="FOTOGRAFIA (input type file):"
+            type="file"
+            name="fotografia"
+            value={formData.image || ""}
+            onChange={handleChange}
+          />
           <div className={Style.containerButtton}>
             <button
               className={`${Style.button} ${isActive ? Style.active : ""}`}

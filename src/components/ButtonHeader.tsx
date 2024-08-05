@@ -2,25 +2,84 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleFavorite } from "@/store/personajes/favorite";
 import Style from "../styles/buttonHeadder.module.css";
-import { RootState } from "@/interface";
+import { FavoriteState, RootState } from "@/interface";
 import Image from "next/image";
 import AddModal from "./AddModal";
 
+// FavoriteList component
+const FavoriteList = ({
+  favoriteState,
+  dispatch,
+}: {
+  favoriteState: FavoriteState;
+  dispatch: any;
+}) => {
+  const favoriteCount = Object.keys(favoriteState).length;
+
+  return (
+    <div className={`${Style.favoritesList}`}>
+      {favoriteCount === 0 && (
+        <div className={Style.favoriteItem}>No hay favoritos</div>
+      )}
+      {favoriteCount > 0 && (
+        <>
+          <h4 className="text-center text-white mb-3 md:pt-3 ">{`Personajes favoritos: ${favoriteCount} / 5`}</h4>
+          <hr />
+        </>
+      )}
+      {Object.entries(favoriteState).map(([key, character]) => {
+        const { name, image } = character;
+        return (
+          <div key={key} className={Style.favoriteItem}>
+            <Image
+              src={image.replace("http://", "https://")}
+              alt={name}
+              width={100}
+              height={100}
+              className={Style.image}
+              priority={false}
+            />
+            {name}
+            <button onClick={() => dispatch(toggleFavorite({ name, image }))}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="icon icon-tabler icon-tabler-trash"
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="#ffffff"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M4 7l16 0" />
+                <path d="M10 11l0 6" />
+                <path d="M14 11l0 6" />
+                <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+              </svg>
+            </button>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+// ButtonHeader component
 export const ButtonHeader = () => {
   const [showFavorites, setShowFavorites] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const favoriteState = useSelector(
+    (state: RootState) => state.favorite as unknown as FavoriteState
+  );
 
-  const favoriteState = useSelector((state: RootState) => state.favorite);
   const dispatch = useDispatch();
 
   const toggleShowFavorites = () => {
     setShowFavorites(!showFavorites);
-  };
-
-  const favoriteCount = Object.keys(favoriteState).length;
-
-  const showModalClik = () => {
-    setShowModal(true);
   };
 
   return (
@@ -31,57 +90,7 @@ export const ButtonHeader = () => {
     >
       <div className={Style.mobileOnly}>
         {showFavorites && (
-          <div className={`${Style.favoritesList} `}>
-            {Object.keys(favoriteState).length === 0 && (
-              <div className={Style.favoriteItem}>No hay favoritos</div>
-            )}
-            {favoriteCount > 0 && (
-              <>
-                <h4 className="text-center text-white mb-3 ">{` Personaje favorito: ${favoriteCount} / 5`}</h4>
-                <hr />
-              </>
-            )}
-            {Object.entries(favoriteState).map(([name, { image }]) => {
-              return (
-                <div key={name} className={Style.favoriteItem}>
-                  <Image
-                    src={image.replace("http://", "https://")}
-                    alt={name}
-                    width={100}
-                    height={100}
-                    className={Style.image}
-                    priority={false}
-                  />
-                  {name}
-                  <button
-                    onClick={() =>
-                      dispatch(toggleFavorite({ name, image: "" }))
-                    }
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="icon icon-tabler icon-tabler-trash"
-                      width="28"
-                      height="28"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="#ffffff"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M4 7l16 0" />
-                      <path d="M10 11l0 6" />
-                      <path d="M14 11l0 6" />
-                      <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                      <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                    </svg>
-                  </button>
-                </div>
-              );
-            })}
-          </div>
+          <FavoriteList favoriteState={favoriteState} dispatch={dispatch} />
         )}
       </div>
 
@@ -89,7 +98,7 @@ export const ButtonHeader = () => {
         <div>
           <button
             className={`${Style.ButtonHeader} ${Style.ButtonHeaderLeft}`}
-            onClick={() => toggleShowFavorites()}
+            onClick={toggleShowFavorites}
           >
             FAVORITOS
             <svg
@@ -116,7 +125,7 @@ export const ButtonHeader = () => {
         <div>
           <button
             className={`${Style.ButtonHeader} ${Style.ButtonHeaderRight}`}
-            onClick={showModalClik}
+            onClick={() => setShowModal(true)}
           >
             AGREGAR
             <svg
@@ -145,57 +154,7 @@ export const ButtonHeader = () => {
 
       <div className={Style.desktopOnly}>
         {showFavorites && (
-          <div className={`${Style.favoritesList}`}>
-            {Object.keys(favoriteState).length === 0 && (
-              <div className={Style.favoriteItem}>No hay favoritos</div>
-            )}
-            {Object.entries(favoriteState).map(([name, { image }]) => {
-              return (
-                <div key={name} className={Style.favoriteItem}>
-                  <Image
-                    src={image.replace("http://", "https://")}
-                    alt={name}
-                    width={100}
-                    height={100}
-                    className={Style.image}
-                    priority={false}
-                  />
-                  {name}
-                  <button
-                    onClick={() =>
-                      dispatch(toggleFavorite({ name, image: "" }))
-                    }
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="icon icon-tabler icon-tabler-trash"
-                      width="28"
-                      height="28"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="#ffffff"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M4 7l16 0" />
-                      <path d="M10 11l0 6" />
-                      <path d="M14 11l0 6" />
-                      <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                      <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                    </svg>
-                  </button>
-                </div>
-              );
-            })}
-            {favoriteCount > 0 && (
-              <>
-                <hr />
-                <h4 className="text-center text-white pt-3">{` Personaje favorito: ${favoriteCount} / 5`}</h4>
-              </>
-            )}
-          </div>
+          <FavoriteList favoriteState={favoriteState} dispatch={dispatch} />
         )}
       </div>
     </div>
