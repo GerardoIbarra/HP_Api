@@ -43,3 +43,4 @@ como lo solucionaste.
 
 - tuve un problema con la creacion del boton collapse, no me salia en un inicio lo pude solucionar primero con taiwind y de ahi pase los estilos a css.
   -Tambien al inicio a la hora de guardar a favoritos solamente guardaba el nombre y cuando quise incluir la imagen ahi es donde me tranaba la lista en mi componenete ya que aunque ya habia hecho las configuraciones necesarias en toolkit no me habia percatado que segui usando Object.key jeje hasta que lo cambie es que pude seguir adelante.
+![image](https://github.com/user-attachments/assets/29b0a261-fd5b-41f4-a028-260b594b18f9)
