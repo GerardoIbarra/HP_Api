@@ -5,6 +5,8 @@ import { fetchData } from "../../hook/Fetchdata";
 import { Character } from "@/interface";
 import { PersonajesCard } from "@/components/PersonajesCard";
 import { ButtonHeader } from "@/components/ButtonHeader";
+import FilterButton from "@/components/FilterButton";
+
 export default function HarryPage() {
   const [personajes, setPersonajes] = useState<Character[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -49,22 +51,18 @@ export default function HarryPage() {
           <h1 className={Style.title}>Selecciona tu filtro</h1>
         </div>
         <div className={Style.buttonContainer}>
-          <button
-            onClick={() => setFilter(filter === "students" ? null : "students")}
-            className={`${Style.button} ${
-              filter === "students" ? Style.active : ""
-            }`}
-          >
-            ESTUDIANTES
-          </button>
-          <button
-            onClick={() => setFilter(filter === "staff" ? null : "staff")}
-            className={`${Style.button} ${
-              filter === "staff" ? Style.active : ""
-            }`}
-          >
-            STAFF
-          </button>
+          <FilterButton
+            filter={filter}
+            setFilter={setFilter}
+            targetFilter="students"
+            label="ESTUDIANTES"
+          />
+          <FilterButton
+            filter={filter}
+            setFilter={setFilter}
+            targetFilter="staff"
+            label="STAFF"
+          />
         </div>
         <div className={Style.grid}>
           {personajes.map((personaje) => (
