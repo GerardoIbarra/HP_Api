@@ -1,4 +1,5 @@
 import React from "react";
+import Style from "../styles/modalNew.module.css";
 
 interface RadioFieldProps {
   label: string;
@@ -22,6 +23,7 @@ const RadioField: React.FC<RadioFieldProps> = ({
       value={value}
       checked={checked}
       onChange={onChange}
+      className={Style.radiolabel}
     />
     {label}
   </label>

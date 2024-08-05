@@ -20,14 +20,43 @@ const AddModal: React.FC<ModalProps> = ({ onClose }) => {
     hogwartsStudent: false,
     hogwartsStaff: false,
     image: undefined as string | undefined,
+    alive: true,
   });
+
+  const [file, setFile] = useState<File | null>(null);
+
+  async function uploadImage(file: File) {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "ml_default_HP");
+
+    try {
+      const response = await fetch(
+        "https://api.cloudinary.com/v1_1/dwhs64chr/image/upload",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      const data = await response.json();
+      if (response.ok) {
+        return data.secure_url;
+      } else {
+        throw new Error(data.error.message || "Error al subir la imagen");
+      }
+    } catch (error) {
+      console.error("Error al subir imagen:", error);
+      return null;
+    }
+  }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked, files } = event.target;
     switch (type) {
       case "file":
         if (files?.[0]) {
-          setFormData({ ...formData, image: files[0].name });
+          setFile(files[0]);
         }
         break;
       case "radio":
@@ -51,13 +80,24 @@ const AddModal: React.FC<ModalProps> = ({ onClose }) => {
   };
 
   const handleSubmit = async (event: React.FormEvent) => {
-    setIsActive(!isActive);
     event.preventDefault();
+    setIsActive(true);
+
+    let imageUrl = formData.image;
+    if (file) {
+      imageUrl = await uploadImage(file);
+      if (!imageUrl) {
+        console.error("No se pudo subir la imagen.");
+        setIsActive(false);
+        return;
+      }
+      setFormData((prev) => ({ ...prev, image: imageUrl }));
+    }
 
     const dataToSend: CharacterModlAdd = {
       ...formData,
+      image: imageUrl || "",
       gender: formData.gender === "male" ? "male" : "female",
-      image: formData.image || "",
     };
 
     try {
@@ -68,13 +108,13 @@ const AddModal: React.FC<ModalProps> = ({ onClose }) => {
       await Promise.all(
         endpoints.map((endpoint) => addCharacterModal(dataToSend, endpoint))
       );
+      onClose();
     } catch (error) {
       console.error("Error al añadir personaje:", error);
     }
 
-    onClose();
+    setIsActive(false);
   };
-
   return (
     <div className={Style.modalbackdrop}>
       <div className={Style.modalcontent}>
@@ -180,8 +220,9 @@ const AddModal: React.FC<ModalProps> = ({ onClose }) => {
             label="FOTOGRAFIA (input type file):"
             type="file"
             name="fotografia"
-            value={formData.image || ""}
-            onChange={handleChange}
+            onChange={(e) => {
+              setFile(e.target.files ? e.target.files[0] : null);
+            }}
           />
           <div className={Style.containerButtton}>
             <button

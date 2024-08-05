@@ -35,7 +35,6 @@ qué más hubieras hecho?
 - Una pagina extra que cuando se le diera click al persona te saliera informacion detallada del personaje.
 - Solicitar mas datos en el formulario para poder mostrar despues en el las tarjetas los valores correspondientes de casas, si esta vivo.
   -Una vez despues de agregar nuevos personajes me hubiera gustado tambien agregar un manejador de estado para que la data se recargara automaticamente en la lista con los nuevos personajes agregados.
-  -Tambien me hubiera gustado implementar con express o prisma o con otro servicio el alojamiento de imagenes ya que en este momento solamente lo harckodea la imagen que se solicita en el formulario de nuevo personaje, ya que no pude crear un url a traves de la imagen agregada.
 
 o Descríbenos un pain point o bug con el que te hayas encontrado y
 como lo solucionaste.

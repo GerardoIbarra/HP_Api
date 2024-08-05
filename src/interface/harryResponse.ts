@@ -103,4 +103,5 @@ export interface CharacterModlAdd {
   hogwartsStudent: boolean;
   hogwartsStaff: boolean;
   image: string | File | undefined;
+  alive: boolean;
 }
