@@ -30,10 +30,9 @@ o ¿Qué es lo que ms te gustó de tu desarrollo?
 o Si hubieras tenido más tiempo ¿qué hubieras mejorado o
 qué más hubieras hecho?
 
--Me hubiera gustado agregar la permanencia del localstorage en los favoritos, cuando teniamos personajes agregados en favoritos.
 -Animaciones
 
-- una pagina extra que cuando se le diera click al persona te saliera informacion detallada del personaje.
+- Una pagina extra que cuando se le diera click al persona te saliera informacion detallada del personaje.
 - Solicitar mas datos en el formulario para poder mostrar despues en el las tarjetas los valores correspondientes de casas, si esta vivo.
   -Una vez despues de agregar nuevos personajes me hubiera gustado tambien agregar un manejador de estado para que la data se recargara automaticamente en la lista con los nuevos personajes agregados.
   -Tambien me hubiera gustado implementar con express o prisma o con otro servicio el alojamiento de imagenes ya que en este momento solamente lo harckodea la imagen que se solicita en el formulario de nuevo personaje, ya que no pude crear un url a traves de la imagen agregada.
@@ -43,4 +42,4 @@ como lo solucionaste.
 
 - tuve un problema con la creacion del boton collapse, no me salia en un inicio lo pude solucionar primero con taiwind y de ahi pase los estilos a css.
   -Tambien al inicio a la hora de guardar a favoritos solamente guardaba el nombre y cuando quise incluir la imagen ahi es donde me tranaba la lista en mi componenete ya que aunque ya habia hecho las configuraciones necesarias en toolkit no me habia percatado que segui usando Object.key jeje hasta que lo cambie es que pude seguir adelante.
-![image](https://github.com/user-attachments/assets/29b0a261-fd5b-41f4-a028-260b594b18f9)
+  ![image](https://github.com/user-attachments/assets/29b0a261-fd5b-41f4-a028-260b594b18f9)

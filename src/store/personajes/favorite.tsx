@@ -1,12 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { FavoriteCharacter } from "@/interface/harryResponse";
 import { Character } from "@/interface";
+import { loadFromLocalStorage } from "../localStorageUtils";
 
 interface FavoriteState {
   [key: string]: FavoriteCharacter;
 }
 
-const initialState: FavoriteState = {};
+const initialState: FavoriteState = loadFromLocalStorage();
 
 const favorite = createSlice({
   name: "favorite",
